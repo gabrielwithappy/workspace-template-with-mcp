@@ -33,14 +33,6 @@ if exist ".env" (
     echo Environment variables loaded successfully! (!envCount! variables)
 )
 
-REM Create data directory for SQLite and other data
-if not exist "data" (
-    mkdir "data" >nul 2>&1
-    echo + Created data directory
-) else (
-    echo + Data directory already exists
-)
-
 REM Create logs directory
 if not exist "logs" (
     mkdir "logs" >nul 2>&1

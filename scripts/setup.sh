@@ -31,14 +31,6 @@ if [ -f ".env" ]; then
     echo "Environment variables loaded successfully! ($envCount variables)"
 fi
 
-# Create data directory for SQLite and other data
-if [ ! -d "data" ]; then
-    mkdir -p "data"
-    echo "✓ Created data directory"
-else
-    echo "✓ Data directory already exists"
-fi
-
 # Create logs directory
 if [ ! -d "logs" ]; then
     mkdir -p "logs"

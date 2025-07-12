@@ -79,7 +79,6 @@ BRAVE_API_KEY=your_brave_api_key_here
 
 - **Brave Search MCP**: 웹 검색 기능
 - **Puppeteer MCP**: 웹 스크래핑 및 자동화
-- **SQLite MCP**: 데이터베이스 관리
 
 자세한 설정 방법은 [MCP 서버 가이드](docs/mcp-servers-guide.md)를 참조하세요.
 
@@ -103,8 +102,7 @@ mcp-workspace/
 │   └── setup.sh              # macOS/Linux Bash
 ├── docs/                      # 문서
 │   └── mcp-servers-guide.md
-├── data/                      # 데이터 파일 (setup.ps1로 생성)
-└── logs/                      # 로그 파일 (setup.ps1로 생성)
+└── logs/                      # 로그 파일 (setup 스크립트로 생성)
 ```
 
 ## 🔧 VS Code 설정

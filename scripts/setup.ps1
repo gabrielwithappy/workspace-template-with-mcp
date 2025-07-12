@@ -37,15 +37,6 @@ if (Test-Path ".env") {
     Write-Host "Environment variables loaded successfully! ($envCount variables)" -ForegroundColor Green
 }
 
-# Create data directory for SQLite and other data
-if (-not (Test-Path "data")) {
-    New-Item -ItemType Directory -Path "data" | Out-Null
-    Write-Host "+ Created data directory" -ForegroundColor Green
-}
-else {
-    Write-Host "+ Data directory already exists" -ForegroundColor Green
-}
-
 # Create logs directory
 if (-not (Test-Path "logs")) {
     New-Item -ItemType Directory -Path "logs" | Out-Null

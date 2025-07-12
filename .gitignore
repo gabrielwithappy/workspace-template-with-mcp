@@ -23,7 +23,6 @@ pids/
 coverage/
 
 # Database files
-data/
 *.db
 *.sqlite
 *.sqlite3
