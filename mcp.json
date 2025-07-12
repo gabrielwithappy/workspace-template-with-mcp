@@ -1,0 +1,89 @@
+{
+	"servers": {
+		"Framelink Figma MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"figma-developer-mcp",
+				"--figma-api-key=%FIGMA_API_KEY%",
+				"--stdio"
+			],
+			"type": "stdio"
+		},
+		"TalkToFigma": {
+			"command": "bunx",
+			"args": [
+				"cursor-talk-to-figma-mcp@latest",
+				"--figma-api-key=%FIGMA_API_KEY%",
+				"--channel=%FIGMA_CHANNEL%"
+			]
+		},
+		"Filesystem MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-filesystem@latest",
+				"%MCP_FILESYSTEM_PATH%"
+			],
+			"type": "stdio"
+		},
+		"Memory MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-memory@latest"
+			],
+			"type": "stdio"
+		},
+		"Brave Search MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-brave-search@latest",
+				"--api-key=%BRAVE_API_KEY%"
+			],
+			"type": "stdio"
+		},
+		"GitHub MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-github@latest",
+				"--github-personal-access-token=%GITHUB_TOKEN%"
+			],
+			"type": "stdio"
+		},
+		"Puppeteer MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-puppeteer@latest"
+			],
+			"type": "stdio"
+		},
+		"SQLite MCP": {
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-sqlite@latest",
+				"%MCP_SQLITE_DB_PATH%"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": []
+}
