@@ -140,9 +140,9 @@ BRAVE_API_KEY=your_brave_api_key_here
 ```json
 {
   "mcpServers": {
-    "memory": { ... }, // 활성화
-    "figma": { ... } // 활성화
-    // "github": {  } // 비활성화
+    "memory": { ... }, 
+    "figma": { ... } 
+    // "github": {  }
   }
 }
 ```
