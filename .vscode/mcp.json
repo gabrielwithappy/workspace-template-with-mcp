@@ -22,25 +22,11 @@
 			"type": "stdio"
 		},
 		"Memory MCP": {
-			"command": "cmd",
+			"command": "npx",
 			"args": [
-				"/c",
-				"npx",
 				"-y",
-				"@modelcontextprotocol/server-memory@latest"
-			],
-			"type": "stdio"
-		},
-		"Brave Search MCP": {
-			"command": "cmd",
-			"args": [
-				"/c",
-				"npx",
-				"-y",
-				"@modelcontextprotocol/server-brave-search@latest",
-				"--api-key=%BRAVE_API_KEY%"
-			],
-			"type": "stdio"
+				"@modelcontextprotocol/server-memory"
+			]
 		},
 		"Puppeteer MCP": {
 			"command": "cmd",

@@ -72,7 +72,6 @@ BRAVE_API_KEY=your_brave_api_key_here
 ### 개발 도구
 
 - **GitHub MCP**: Git 저장소 관리
-- **Filesystem MCP**: 로컬 파일 시스템 액세스
 - **Memory MCP**: 메모리 기반 데이터 저장
 
 ### 유틸리티
@@ -115,8 +114,43 @@ mcp-workspace/
 ## 🔒 보안 주의사항
 
 - `.env` 파일은 절대 Git에 커밋하지 마세요
+- `data` 폴더(예: memory.json)는 중요한 개인정보 및 프로젝트 컨텍스트가 저장되므로 반드시 `.gitignore`에 추가하여 Git에 업로드되지 않도록 관리하세요
 - API 키는 안전하게 보관하세요
 - 프로덕션 환경에서는 환경 변수를 별도로 관리하세요
+
+## 🛠️ 개발환경 의존성 안내
+
+이 워크스페이스의 MCP 서버 설정(`.vscode/mcp.json`)에 따라 다음과 같은 의존성이 필요합니다.
+
+### 1. Node.js & npm
+
+- 대부분의 MCP 서버(`npx` 명령어 사용)는 Node.js와 npm이 필요합니다.
+- [Node.js 공식 다운로드](https://nodejs.org/)
+
+### 2. Bun & bunx (TalkToFigma MCP 전용)
+
+- **TalkToFigma MCP** 서버(`bunx` 명령어 사용)는 Bun 런타임이 필요합니다.
+- [Bun 공식 설치 안내](https://bun.sh/)
+- Windows 설치 예시 (PowerShell):
+
+  ```powershell
+  iwr https://bun.sh/install.ps1 | iex
+  ```
+
+- 설치 후 `bunx --version`으로 정상 설치 확인
+
+### 3. 환경 변수
+
+- `.env` 파일에 다음과 같은 값이 필요합니다:
+  - `FIGMA_API_KEY`
+  - `FIGMA_CHANNEL`
+  - 기타 MCP 서버별 API 키
+
+### 4. 참고
+
+- 각 MCP 서버는 별도의 패키지 설치 없이 npx/bunx로 실행됩니다.
+- Bun이 설치되어 있지 않으면 **TalkToFigma MCP**의 `bunx` 명령어가 동작하지 않습니다.
+- Node.js가 설치되어 있지 않으면 `npx` 명령어가 동작하지 않습니다.
 
 ## 📄 라이선스
 
