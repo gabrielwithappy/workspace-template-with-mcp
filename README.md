@@ -129,7 +129,7 @@ BRAVE_API_KEY=your_brave_api_key_here
 
 **서버 활성화/비활성화 방법:**
 
-1. **서버 비활성화**: 해당 서버 전체 블록을 주석 처리하거나 삭제
+1. **서버 비활성화**: 해당 서버 전체 블록을 `mcp.json`에서 삭제
 2. **서버 활성화**: 필요한 서버 설정을 `mcpServers` 객체에 추가
 3. **환경변수 설정**:
    - `.env` 파일에서 실제 값 설정
@@ -140,12 +140,26 @@ BRAVE_API_KEY=your_brave_api_key_here
 ```json
 {
   "mcpServers": {
-    "memory": { ... }, 
-    "figma": { ... } 
-    // "github": {  }
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_STORE_PATH": "./data"
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@framelink/figma-mcp-server"],
+      "env": {
+        "FIGMA_API_KEY": "${FIGMA_API_KEY}",
+        "FIGMA_CHANNEL": "${FIGMA_CHANNEL}"
+      }
+    }
   }
 }
 ```
+
+> **참고**: GitHub 서버를 비활성화하려면 해당 `"github"` 섹션 전체를 삭제하면 됩니다.
 
 ## 📁 프로젝트 구조
 
